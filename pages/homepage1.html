@@ -43,8 +43,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-        target="_blank">
+      <a class="navbar-brand px-4 py-3 m-0" href="../pages/homepage1.html">
         <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
         <span class="ms-1 text-sm text-dark">AI Private Tutor</span>
       </a>
@@ -65,21 +64,23 @@
           <a class="nav-link text-dark" href="../pages/tcpipnetwork.html">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1"
-                  style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UEEN2013 TCP/IP Network Fundamentals</span>
+              style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UEEN2013
+              TCP/IP Network Fundamentals</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/ooap.html">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1"
-                  style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UECS1144 Object Oriented Application Development</span>
+              style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UECS1144
+              Object Oriented Application Development</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/progprobsolv.html">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1"
-                  style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UECS1104
+              style="white-space: normal; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 200px;">UECS1104
               Programming and Problem Solving</span>
           </a>
         </li>
@@ -92,7 +93,7 @@
             <span class="nav-link-text ms-1">Profile</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/sign-in.html">
             <i class="material-symbols-rounded opacity-5">login</i>
             <span class="nav-link-text ms-1">Sign In</span>
@@ -103,7 +104,7 @@
             <i class="material-symbols-rounded opacity-5">assignment</i>
             <span class="nav-link-text ms-1">Sign Up</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
@@ -238,10 +239,41 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item d-flex align-items-center">
-              <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+            <li class="nav-item dropdown pe-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="accountDropdownButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <i class="material-symbols-rounded">account_circle</i>
               </a>
+              <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="accountDropdownButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="../pages/profile.html">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Laura</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="../pages/sign-in.html">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <i class="material-symbols-rounded text-secondary me-3">logout</i>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Logout</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -287,132 +319,138 @@
               <div class="table-responsive">
                 <table class="table align-items-center mb-0">
                   <thead>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Courses</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lecturers</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quiz Marks</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Course Completion</th>
-                  </tr>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Courses</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lecturers
+                      </th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quiz
+                        Marks</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Course
+                        Completion</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="course">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <a href="../pages/tcpipnetwork.html" class="text-decoration-none text-dark">
-                            UEEN2013 TCP/IP Network Fundamentals
-                          </a>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
-                           data-bs-placement="bottom" title="Dr. Ryan Tompson">
-                          <img src="../assets/img/team-1.jpg" alt="lecturer1">
-                        </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
-                           data-bs-placement="bottom" title="Prof. Romina Hadid">
-                          <img src="../assets/img/team-2.jpg" alt="lecturer2">
-                        </a>
-                      </div>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="text-xs font-weight-bold"> 85% </span>
-                    </td>
-                    <td class="align-middle">
-                      <div class="progress-wrapper w-75 mx-auto">
-                        <div class="progress-info">
-                          <div class="progress-percentage">
-                            <span class="text-xs font-weight-bold">100%</span>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="course">
                           </div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="course">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <a href="../pages/ooap.html" class="text-decoration-none text-dark">
-                            UECS1144 Object Oriented Application Development
+                          <div class="d-flex flex-column justify-content-center">
+                            <a href="../pages/tcpipnetwork.html" class="text-decoration-none text-dark">
+                              UEEN2013 TCP/IP Network Fundamentals
                             </a>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
-                           data-bs-placement="bottom" title="Dr. Romina Hadid">
-                          <img src="../assets/img/team-2.jpg" alt="lecturer3">
-                        </a>
-                      </div>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="text-xs font-weight-bold"> 70% </span>
-                    </td>
-                    <td class="align-middle">
-                      <div class="progress-wrapper w-75 mx-auto">
-                        <div class="progress-info">
-                          <div class="progress-percentage">
-                            <span class="text-xs font-weight-bold">10%</span>
                           </div>
                         </div>
-                        <div class="progress">
-                          <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10"
-                               aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="course">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <a href="../pages/ooap.html" class="text-decoration-none text-dark">
-                            UECS1104 Programming and Problem Solving
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Dr. Ryan Tompson">
+                            <img src="../assets/img/team-1.jpg" alt="lecturer1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Prof. Romina Hadid">
+                            <img src="../assets/img/team-2.jpg" alt="lecturer2">
                           </a>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
-                           data-bs-placement="bottom" title="Dr. Romina Hadid">
-                          <img src="../assets/img/team-2.jpg" alt="lecturer3">
-                        </a>
-                      </div>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="text-xs font-weight-bold"> 70% </span>
-                    </td>
-                    <td class="align-middle">
-                      <div class="progress-wrapper w-75 mx-auto">
-                        <div class="progress-info">
-                          <div class="progress-percentage">
-                            <span class="text-xs font-weight-bold">10%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> 85% </span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">100%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100"
+                              aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
-                        <div class="progress">
-                          <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10"
-                               aria-valuemin="0" aria-valuemax="100"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3"
+                              alt="course">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <a href="../pages/ooap.html" class="text-decoration-none text-dark">
+                              UECS1144 Object Oriented Application Development
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Add similar structure for other courses -->
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Dr. Romina Hadid">
+                            <img src="../assets/img/team-2.jpg" alt="lecturer3">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> 70% </span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">10%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3"
+                              alt="course">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <a href="../pages/ooap.html" class="text-decoration-none text-dark">
+                              UECS1104 Programming and Problem Solving
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Dr. Romina Hadid">
+                            <img src="../assets/img/team-2.jpg" alt="lecturer3">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> 70% </span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">10%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Add similar structure for other courses -->
                   </tbody>
                 </table>
               </div>
