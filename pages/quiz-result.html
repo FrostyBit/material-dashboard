@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Quiz Result - TCP/IP Network Fundamentals
+    </title>
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .result-box {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .circular-progress {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(#007bff 0deg, #e0e0e0 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .progress-value {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+        }
+
+        .score-text {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .tryAgain-btn {
+            background-color: #28a745;
+        }
+
+        .goHome-btn {
+            background-color: #007bff;
+        }
+
+        .explanation-btn {
+            background-color: #ff8800;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur"
+            data-scroll="true">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
+                                href="../pages/dashboard.html">Home</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Quiz Result</li>
+                    </ol>
+                </nav>
+            </div>
+        </nav>
+        <div class="container-fluid py-2">
+            <div class="row">
+                <div class="ms-3">
+                    <h3 class="mb-0 h4 font-weight-bolder">Quiz Result</h3>
+                </div>
+
+                <!-- Result Section -->
+                <div class="result-box">
+                    <h1>Quiz Result</h1>
+                    <div class="circular-progress">
+                        <span class="progress-value">0%</span>
+                    </div>
+                    <div class="score-text">Your Score: 0 out of 0</div>
+                    <div class="buttons">
+                        <button class="tryAgain-btn" onclick="retryQuiz()">Try Again</button>
+                        <button class="explanation-btn" onclick="showExplanation()">Explanation</button>
+                        <button class="goHome-btn" onclick="goHome()">Go to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fetch score and total questions from localStorage
+        const score = localStorage.getItem("quizScore") || 0;
+        const totalQuestions = localStorage.getItem("totalQuestions") || 0;
+        const percentage = Math.round((score / totalQuestions) * 100) || 0;
+
+        // Update progress and score text
+        document.querySelector('.progress-value').textContent = `${percentage}%`;
+        document.querySelector('.circular-progress').style.background = `conic-gradient(#007bff ${percentage * 3.6}deg, #e0e0e0 0deg)`;
+        document.querySelector('.score-text').textContent = `Your Score: ${score} out of ${totalQuestions}`;
+
+        // Retry quiz function
+        function retryQuiz() {
+            window.location.href = "quiz.html"; // Redirect to quiz page
+        }
+
+        // Go to explanation function
+        function showExplanation() {
+            window.location.href = "quiz-explanation.html"; // Redirect to explanation page
+        }
+
+        // Go to home function
+        function goHome() {
+            window.location.href = "index.html"; // Redirect to home page
+        }
+    </script>
+</body>
+
+</html>
