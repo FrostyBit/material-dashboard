@@ -44,22 +44,42 @@
         }
 
         .circular-progress {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            /* Increased size for better visibility */
+            height: 150px;
             border-radius: 50%;
-            background: conic-gradient(#007bff 0deg, #e0e0e0 0deg);
+            background: conic-gradient(#4caf50 0deg,
+                    #4caf50 calc(var(--progress) * 3.6deg),
+                    #e0e0e0 calc(var(--progress) * 3.6deg));
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 20px auto;
             position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.5s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .circular-progress::after {
+            content: '';
+            width: 120px;
+            /* Inner circle to create a hollow effect */
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
         }
 
         .progress-value {
             font-size: 24px;
             font-weight: bold;
-            position: absolute;
+            z-index: 1;
+            /* Above the inner circle */
+            color: #4caf50;
+            /* Matches the progress bar */
         }
+
 
         .score-text {
             font-size: 18px;
@@ -75,31 +95,59 @@
             gap: 10px;
         }
 
+        /* General button styling */
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
+            font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            /* Rounded corners */
             cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            /* Smooth transition for color change */
             color: #fff;
             flex-grow: 1;
-            text-align: center;
         }
 
+        /* Try Again Button */
         .tryAgain-btn {
-            background-color: #28a745;
+            background: linear-gradient(145deg, #28a745, #218838);
+            /* Green gradient */
+            box-shadow: 2px 2px 6px rgba(0, 128, 0, 0.3), -2px -2px 6px rgba(0, 128, 0, 0.2);
         }
 
+        /* Go Home Button */
         .goHome-btn {
-            background-color: #007bff;
+            background: linear-gradient(145deg, #007bff, #0056b3);
+            /* Blue gradient */
+            box-shadow: 2px 2px 6px rgba(0, 123, 255, 0.3), -2px -2px 6px rgba(0, 123, 255, 0.2);
         }
 
+        /* Explanation Button */
         .explanation-btn {
-            background-color: #ff8800;
+            background: linear-gradient(145deg, #ff8800, #e67e00);
+            /* Orange gradient */
+            box-shadow: 2px 2px 6px rgba(255, 140, 0, 0.3), -2px -2px 6px rgba(255, 140, 0, 0.2);
         }
 
+        /* Button Hover Effects */
         button:hover {
             opacity: 0.9;
+            /* Slightly reduce opacity for hover */
+            transform: translateY(-3px);
+            /* Slight lift effect */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Add shadow effect on hover */
+        }
+
+        /* Active button effect (when clicked) */
+        button:active {
+            transform: translateY(1px);
+            /* Push down effect */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            /* Less shadow when clicked */
         }
     </style>
 </head>
@@ -112,7 +160,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
-                                href="../pages/dashboard.html">Home</a></li>
+                                href="../pages/homepage1.html">Home</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Quiz Result</li>
                     </ol>
                 </nav>
@@ -128,9 +176,9 @@
                 <div class="result-box">
                     <h1>Quiz Result</h1>
                     <div class="circular-progress">
-                        <span class="progress-value">0%</span>
+                        <span class="progress-value">80%</span>
                     </div>
-                    <div class="score-text">Your Score: 0 out of 0</div>
+                    <div class="score-text">Your Score: 4 out of 5</div>
                     <div class="buttons">
                         <button class="tryAgain-btn" onclick="retryQuiz()">Try Again</button>
                         <button class="explanation-btn" onclick="showExplanation()">Explanation</button>
@@ -142,14 +190,16 @@
     </main>
 
     <script>
-        // Fetch score and total questions from localStorage
-        const score = localStorage.getItem("quizScore") || 0;
-        const totalQuestions = localStorage.getItem("totalQuestions") || 0;
-        const percentage = Math.round((score / totalQuestions) * 100) || 0;
+        // Hardcoded values for the score and total questions
+        const score = 4;
+        const totalQuestions = 5;
+        const percentage = 80; // Directly use 80%
 
-        // Update progress and score text
+        // Set progress variable in CSS
+        document.querySelector('.circular-progress').style.setProperty('--progress', percentage);
+
+        // Update progress value text
         document.querySelector('.progress-value').textContent = `${percentage}%`;
-        document.querySelector('.circular-progress').style.background = `conic-gradient(#007bff ${percentage * 3.6}deg, #e0e0e0 0deg)`;
         document.querySelector('.score-text').textContent = `Your Score: ${score} out of ${totalQuestions}`;
 
         // Retry quiz function
@@ -159,12 +209,12 @@
 
         // Go to explanation function
         function showExplanation() {
-            window.location.href = "quiz-explanation.html"; // Redirect to explanation page
+            window.location.href = "quiz-explanation2.html"; // Redirect to explanation page
         }
 
         // Go to home function
         function goHome() {
-            window.location.href = "index.html"; // Redirect to home page
+            window.location.href = "tcpipnetwork2.html"; // Redirect to home page
         }
     </script>
 </body>
