@@ -345,64 +345,128 @@
     </main>
 
     <script>
+
         function downloadPDF() {
             const { jsPDF } = window.jspdf;
-            const doc = new jsPDF('p', 'mm', 'a4'); // A4 size in portrait orientation
-
-            // Set font and margins
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const pageWidth = doc.internal.pageSize.width;
+            const pageHeight = doc.internal.pageSize.height;
             const margin = 15;
-            doc.setFont("Helvetica");
-            doc.setFontSize(16);
+            const lineHeight = 8;
+            const maxWidth = pageWidth - margin * 2;
+            let cursorY = 20;
 
-            // Title of the PDF
-            doc.text("Quiz Explanation - TCP/IP Network Fundamentals", margin, 20);
-            doc.setFontSize(12);
+            // Colors
+            const titleColor = "#007bff";
+            const subtitleColor = "#555555";
+            const textColor = "#333333";
+            const lineColor = "#dddddd";
 
-            // Add a line break for spacing
-            doc.text(" ", margin, 30);
+            // Helper function to add text and handle page breaks
+            function addText(text, fontSize = 12, fontStyle = "normal", color = textColor) {
+                doc.setFont("Helvetica", fontStyle);
+                doc.setFontSize(fontSize);
+                doc.setTextColor(color);
+
+                const lines = doc.splitTextToSize(text, maxWidth);
+                lines.forEach(line => {
+                    if (cursorY + lineHeight > pageHeight - margin) {
+                        doc.addPage();
+                        cursorY = margin;
+                    }
+                    doc.text(line, margin, cursorY);
+                    cursorY += lineHeight;
+                });
+            }
+
+            // Helper function to add section separators
+            function addSeparator() {
+                cursorY += 5;
+                if (cursorY + lineHeight > pageHeight - margin) {
+                    doc.addPage();
+                    cursorY = margin;
+                }
+                doc.setDrawColor(lineColor);
+                doc.line(margin, cursorY, pageWidth - margin, cursorY);
+                cursorY += 5;
+            }
+
+            // Title
+            doc.setFont("Helvetica", "bold");
+            doc.setFontSize(18);
+            doc.setTextColor(titleColor);
+            doc.text("Personalised Notes - TCP/IP Network Fundamentals", margin, cursorY);
+            cursorY += 10;
+
+            addSeparator();
 
             // Section 1: What is a Port Number?
             doc.setFontSize(14);
-            doc.text("1. What is a Port Number?", margin, 40);
-            doc.setFontSize(12);
-            doc.text("A port number is a numerical identifier in networking that helps distinguish different services running on a device. Each service (like web servers, email servers, etc.) listens on a specific port number.", margin, 50);
+            doc.setTextColor(subtitleColor);
+            doc.text("1. What is a Port Number?", margin, cursorY);
+            cursorY += lineHeight;
+
+            addText(
+                "A port number is a numerical identifier in networking that helps distinguish different services running on a device. Each service (like web servers, email servers, etc.) listens on a specific port number."
+            );
+
+            addSeparator();
 
             // Section 2: Common Port Numbers
             doc.setFontSize(14);
-            doc.text("2. Common Port Numbers:", margin, 70);
-            doc.setFontSize(12);
-            doc.text("• HTTP (Hypertext Transfer Protocol): The standard protocol for transferring web pages on the internet uses port 80.", margin, 80);
-            doc.text("• HTTPS (HTTP Secure): Port 443", margin, 90);
-            doc.text("• FTP (File Transfer Protocol): Port 21", margin, 100);
-            doc.text("• SSH (Secure Shell): Port 22", margin, 110);
+            doc.setTextColor(subtitleColor);
+            doc.text("2. Common Port Numbers:", margin, cursorY);
+            cursorY += lineHeight;
+
+            addText("• HTTP (Hypertext Transfer Protocol): The standard protocol for transferring web pages on the internet uses port 80.");
+            addText("• HTTPS (HTTP Secure): Port 443");
+            addText("• FTP (File Transfer Protocol): Port 21");
+            addText("• SSH (Secure Shell): Port 22");
+
+            addSeparator();
 
             // Section 3: Why is HTTP Important?
             doc.setFontSize(14);
-            doc.text("3. Why is HTTP Important?", margin, 130);
-            doc.setFontSize(12);
-            doc.text("HTTP is the foundation of data communication on the World Wide Web. When you enter a URL in your browser, it typically communicates with a web server over port 80 using HTTP.", margin, 140);
+            doc.setTextColor(subtitleColor);
+            doc.text("3. Why is HTTP Important?", margin, cursorY);
+            cursorY += lineHeight;
+
+            addText(
+                "HTTP is the foundation of data communication on the World Wide Web. When you enter a URL in your browser, it typically communicates with a web server over port 80 using HTTP."
+            );
+
+            addSeparator();
 
             // Key Takeaways
             doc.setFontSize(14);
-            doc.text("Key Takeaways", margin, 160);
-            doc.setFontSize(12);
-            doc.text("• The correct answer to the question 'Which port number is associated with HTTP?' is 80.", margin, 170);
-            doc.text("• Remember that while there are many port numbers, each one serves a specific function related to different protocols.", margin, 180);
+            doc.setTextColor(subtitleColor);
+            doc.text("Key Takeaways", margin, cursorY);
+            cursorY += lineHeight;
+
+            addText("• The correct answer to the question 'Which port number is associated with HTTP?' is 80.");
+            addText("• Remember that while there are many port numbers, each one serves a specific function related to different protocols.");
+
+            addSeparator();
 
             // Additional Resources
             doc.setFontSize(14);
-            doc.text("Additional Resources", margin, 200);
-            doc.setFontSize(12);
-            doc.text("To reinforce your understanding, consider reviewing materials on networking basics that cover:", margin, 210);
-            doc.text("• The OSI model and how it relates to networking devices.", margin, 220);
-            doc.text("• The difference between end devices (like computers and servers) and intermediary devices (like switches and routers).", margin, 230);
-            doc.text("By focusing on these areas, you can strengthen your grasp of networking concepts and improve your performance in future assessments.", margin, 240);
+            doc.setTextColor(subtitleColor);
+            doc.text("Additional Resources", margin, cursorY);
+            cursorY += lineHeight;
+
+            addText("To reinforce your understanding, consider reviewing materials on networking basics that cover:");
+            addText("• The OSI model and how it relates to networking devices.");
+            addText("• The difference between end devices (like computers and servers) and intermediary devices (like switches and routers).");
+            addText("By focusing on these areas, you can strengthen your grasp of networking concepts and improve your performance in future assessments.");
 
             // Footer
-            const footerText = "Page 1 of 1";
-            doc.setFontSize(10);
-            const pageHeight = doc.internal.pageSize.height;
-            doc.text(footerText, margin, pageHeight - 10);
+            const totalPages = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= totalPages; i++) {
+                doc.setPage(i);
+                doc.setFontSize(10);
+                doc.setTextColor("#888888");
+                doc.text(`Page ${i} of ${totalPages}`, pageWidth - margin - 20, pageHeight - 10);
+            }
 
             // Save the PDF
             doc.save('TCP_IP_Quiz_Explanation.pdf');
