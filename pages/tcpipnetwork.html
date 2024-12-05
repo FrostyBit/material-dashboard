@@ -44,8 +44,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand px-4 py-3 m-0"
-                href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+            <a class="navbar-brand px-4 py-3 m-0" href="../pages/homepage1.html">
                 <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26"
                     alt="main_logo">
                 <span class="ms-1 text-sm text-dark">AI Private Tutor</span>
@@ -55,6 +54,12 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link text-dark" href="../pages/homepage1.html">
+                        <i class="material-symbols-rounded opacity-5">home</i>
+                        <span class="nav-link-text ms-1">Homepage</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
                     <a class="nav-link text-dark" href="../pages/dashboard.html">
                         <i class="material-symbols-rounded opacity-5">dashboard</i>
                         <span class="nav-link-text ms-1">Dashboard</span>
@@ -89,7 +94,7 @@
                         <i class="material-symbols-rounded opacity-5">notifications</i>
                         <span class="nav-link-text ms-1">Notifications</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Courses</h6>
                 </li>
@@ -127,7 +132,7 @@
                         <span class="nav-link-text ms-1">Profile</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link text-dark" href="../pages/sign-in.html">
                         <i class="material-symbols-rounded opacity-5">login</i>
                         <span class="nav-link-text ms-1">Sign In</span>
@@ -138,7 +143,7 @@
                         <i class="material-symbols-rounded opacity-5">assignment</i>
                         <span class="nav-link-text ms-1">Sign Up</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="sidenav-footer position-absolute w-100 bottom-0 ">
@@ -160,7 +165,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
-                                href="../pages/dashboard.html">Home</a></li>
+                                href="../pages/homepage1.html">Home</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">UEEN2013 TCP/IP Network
                             Fundamentals</li>
                     </ol>
@@ -173,11 +178,11 @@
                         </div>
                     </div>
                     <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
+                        <!-- <li class="nav-item d-flex align-items-center">
                             <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank"
                                 href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online
                                 Builder</a>
-                        </li>
+                        </li> -->
                         <!-- <li class="mt-1">
                             <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard"
                                 data-icon="octicon-star" data-size="large" data-show-count="true"
@@ -280,10 +285,42 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item d-flex align-items-center">
-                            <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+                        <li class="nav-item dropdown pe-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="accountDropdownButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="material-symbols-rounded">account_circle</i>
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4"
+                                aria-labelledby="accountDropdownButton">
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="../pages/profile.html">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">Laura</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="../pages/sign-in.html">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <i class="material-symbols-rounded text-secondary me-3">logout</i>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">Logout</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -331,16 +368,16 @@
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
                                         <p class="text-sm mb-3">
-                                            Notifications on this page use Toasts from Bootstrap. Read more details <a
-                                                href="https://getbootstrap.com/docs/5.0/components/toasts/" target="
-                                      ">here</a>.
+                                            For Week 1, we will focus on Topic 1: Introduction to Networking Devices
                                         </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
                                                 data-target="successToast"
                                                 onclick="window.location.href='../pages/content1.html';"
-                                                style="width: 300px;">Topic 1: Introduction to Java</button>
+                                                style="width: 300px; text-align: left;">Topic 1(a): Introduction to
+                                                Networking
+                                                Devices</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -348,21 +385,28 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                1(b):
+                                                IP addresses</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                1(c):
+                                                Port Number
+                                                Devices</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                1(d):
+                                                MAC number</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -372,6 +416,14 @@
                                                 onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
 
                                     </div>
@@ -414,10 +466,16 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 2, we will focus on Topic 2: Managing an Internetwork
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 2(a): IP Address Design
+                                                Plan</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -425,30 +483,45 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                2(b):
+                                                Switch</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                2(c):
+                                                Configuring the PC
+                                                Devices</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                2(d):
+                                                Make Connection</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -490,10 +563,16 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 3, we will focus on Topic 3: Subnetting, VLSM and Summarization
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 3(a): IP Subnet
+                                                Rules</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -501,30 +580,41 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                3(b): Broadcast, Multicast, Unicast</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                3(c): Private and Public IP Address</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                3(d): Types of Subnetting</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -566,10 +656,16 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 4, we will focus on Topic 4: Basic Routing
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 4(a): Harware Component
+                                                Devices</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -577,30 +673,41 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                4(b): Command Line Interface (CLI)</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                4(c): User and Priviledged Mode</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                4(d): Telnet Service</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -642,10 +749,16 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 5, we will focus on Topic 5: Access Control List (ACL)
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 5(a): Advantages of
+                                                Subnetting</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -653,30 +766,41 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                5(b): What is Subnetting</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                5(c): Introduction to Wildcard Mask</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                5(d): Rules of Standard ACL</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -718,10 +842,17 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 6, we will focus on Topic 6: Process-to-Process Delivery: UDP and
+                                            TCP
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 6(a): Process-to-Process
+                                                Delivery</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -729,30 +860,43 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                6(b): Connectionless vs. Connection-Oriented Service</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                6(c):
+                                                Port Number
+                                                Devices</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                6(d): Three Protocols</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -794,10 +938,15 @@
                                 <div class="row">
                                     <!-- Materials Column -->
                                     <div class="col-lg-12 col-sm-12">
+                                        <p class="text-sm mb-3">
+                                            For Week 7, we will focus on Topic 7: IP Protocols
+                                        </p>
                                         <!-- Success Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast"
+                                                onclick="window.location.href='../pages/content1.html';"
+                                                style="width: 300px; text-align: left;">Topic 7(a): IP Service</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
@@ -805,30 +954,41 @@
                                         <!-- Info Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                7(b): Fields of the IP Header</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Warning Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                7(c): IP Fragmentation</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Danger Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                data-target="successToast" style="width: 300px; text-align: left;">Topic
+                                                7(d): Private Network</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
                                         </div>
                                         <!-- Quiz Button and Status -->
                                         <div class="d-flex align-items-center mb-3">
                                             <button class="btn bg-gradient-dark mb-0" type="button"
-                                                data-target="successToast" style="width: 300px;">Success</button>
+                                                onclick="location.href='quiz.html';" style="width: 300px;">Quiz</button>
                                             <i class="material-symbols-rounded opacity-5 ms-auto"
                                                 style="font-size: 30px;">check_circle</i>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <button class="btn bg-gradient-dark mb-0" type="button"
+                                                onclick="location.href='content2.html';"
+                                                style="width: 300px;">AI-Generated
+                                                Supplement</button>
+                                            <!-- <i class="material-symbols-rounded opacity-5 ms-auto"
+                                                style="font-size: 30px;">check_circle</i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -976,14 +1136,14 @@
         </div>
     </main>
     <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+        <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="material-symbols-rounded py-2">settings</i>
-        </a>
+        </a> -->
         <div class="card shadow-lg">
             <div class="card-header pb-0 pt-3">
                 <div class="float-start">
-                    <h5 class="mt-3 mb-0">Material UI Configurator</h5>
-                    <p>See our dashboard options.</p>
+                    <h5 class="mt-3 mb-0">Platform Configurator</h5>
+                    <!-- <p>See our dashboard options.</p> -->
                 </div>
                 <div class="float-end mt-4">
                     <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
@@ -1044,26 +1204,25 @@
                             onclick="darkMode(this)">
                     </div>
                 </div>
-                <hr class="horizontal dark my-sm-4">
-                <a class="btn bg-gradient-info w-100"
-                    href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
-                <a class="btn btn-outline-dark w-100"
-                    href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View
-                    documentation</a>
-                <div class="w-100 text-center">
-                    <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard"
-                        data-icon="octicon-star" data-size="large" data-show-count="true"
-                        aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-                    <h6 class="mt-3">Thank you for sharing!</h6>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard"
-                        class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard"
-                        class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-                    </a>
-                </div>
+                <!-- <hr class="horizontal dark my-sm-4">
+            <a class="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free
+              Download</a>
+            <a class="btn btn-outline-dark w-100"
+              href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
+            <div class="w-100 text-center">
+              <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard"
+                data-icon="octicon-star" data-size="large" data-show-count="true"
+                aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
+              <h6 class="mt-3">Thank you for sharing!</h6>
+              <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard"
+                class="btn btn-dark mb-0 me-2" target="_blank">
+                <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard"
+                class="btn btn-dark mb-0 me-2" target="_blank">
+                <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+              </a>
+            </div> -->
             </div>
         </div>
     </div>
