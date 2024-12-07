@@ -324,10 +324,19 @@
                 userMessage.innerHTML = `<strong>You:</strong> ${message}`;
                 chatMessages.appendChild(userMessage);
 
-                // Simulate AI response
+                // AI hardcoded response
                 const aiMessage = document.createElement("div");
                 aiMessage.className = "chat-message ai";
-                aiMessage.innerHTML = `<strong>AI:</strong> Let me explain: ${message}`;
+                aiMessage.innerHTML = `
+                    <strong>AI:</strong> To learn about the topic related to "Which port number is associated with HTTP?" (answer: 80), here are some resources:<br>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=wUnBloy7oko" target="_blank">Introduction to Networking</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=Z5s8g1D0l3c" target="_blank">Understanding TCP/IP and Ports</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=0gX4Cq8iG9M" target="_blank">What is HTTP?</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=2zA9zG6fQ2Y" target="_blank">Networking Basics: Ports and Protocols</a></li>
+                    </ul>
+                    These videos will help you understand HTTP, its functionality, and its associated port number.
+                `;
                 chatMessages.appendChild(aiMessage);
 
                 // Clear input and scroll to bottom
@@ -336,6 +345,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

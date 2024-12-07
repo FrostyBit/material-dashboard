@@ -313,15 +313,13 @@
                     <div class="chat-message ai">
                         <span><strong>AI:</strong> Hello, how can I assist you?</span>
                     </div>
-                    <div class="chat-message user">
-                        <span><strong>You:</strong> What does port 80 do?</span>
-                    </div>
                 </div>
                 <div class="chatbox-input-container">
                     <input type="text" class="chatbox-input" placeholder="Type your message...">
                     <button class="chatbox-send-btn">Send</button>
                 </div>
             </div>
+
 
             <div style="
                 width: 100%;
@@ -345,6 +343,62 @@
     </main>
 
     <script>
+
+        // Chatbot script
+        document.querySelector('.chatbox-send-btn').addEventListener('click', () => {
+            const userInput = document.querySelector('.chatbox-input').value;
+
+            if (userInput.trim() !== "") {
+                // Create user message
+                const chatboxMessages = document.querySelector('.chatbox-messages');
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user';
+                userMessage.innerHTML = `<strong>You:</strong> ${userInput}`;
+                chatboxMessages.appendChild(userMessage);
+
+                // Hardcoded AI response
+                const aiResponse = `
+            <p><strong>The OSI (Open Systems Interconnection) model</strong> is a critical framework in networking that delineates how different networking protocols interact and communicate. It is structured into seven layers, each serving a distinct function, which facilitates interoperability among diverse networking devices and technologies.</p>
+
+            <p><strong>Overview of the OSI Model:</strong></p>
+            <p>The OSI model was developed by the International Organization for Standardization (ISO) in 1984 to standardize network communication protocols. Although it is primarily a theoretical framework, it plays a significant role in understanding networking concepts and troubleshooting network issues.</p>
+            <p>The seven layers of the OSI model, from the lowest to the highest, are:</p>
+
+            <ul>
+                <li><strong>Physical Layer:</strong> Handles the physical transmission of raw data over a network medium. This includes cables, switches, and other hardware components.</li>
+                <li><strong>Data Link Layer:</strong> Manages node-to-node data transfer, including error detection and correction.</li>
+                <li><strong>Network Layer:</strong> Determines data routing between devices on different networks using IP addresses.</li>
+                <li><strong>Transport Layer:</strong> Ensures reliable data transfer and error recovery (e.g., TCP protocol).</li>
+                <li><strong>Session Layer:</strong> Manages sessions or connections between applications.</li>
+                <li><strong>Presentation Layer:</strong> Translates data formats and handles encryption/decryption.</li>
+                <li><strong>Application Layer:</strong> Provides services like file transfers, email, and web browsing.</li>
+            </ul>
+
+            <p>Each layer of the OSI model corresponds to specific networking devices and protocols, making it an invaluable tool for troubleshooting and network design.</p>
+
+            <p><strong>Additional Resources:</strong></p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=0y6FtKsg6J4" target="_blank">OSI Model Overview</a></li>
+                <li><a href="https://youtu.be/8-32WcWDiOA?si=X34g8sb2sZydq894" target="_blank">TCP/IP Fundamentals</a></li>
+            </ul>
+        `;
+
+                // Display the AI response
+                const aiMessage = document.createElement('div');
+                aiMessage.className = 'chat-message ai';
+                aiMessage.innerHTML = `<strong>AI:</strong> ${aiResponse}`;
+                chatboxMessages.appendChild(aiMessage);
+
+                // Scroll to the bottom of the chatbox
+                chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+
+                // Clear user input field
+                document.querySelector('.chatbox-input').value = '';
+            }
+        });
+
+
+
 
         function downloadPDF() {
             const { jsPDF } = window.jspdf;
